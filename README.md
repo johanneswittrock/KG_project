@@ -1,2 +1,3 @@
 # KG_project
-KG_Mates project for "Foundations of Knowledge Graphs"
+Project for "Foundations of Knowledge Graphs"
+Group name: KG_Mates
