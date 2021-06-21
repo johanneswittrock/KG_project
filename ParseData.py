@@ -6,7 +6,7 @@ from ontolearn.heuristics import DLFOILHeuristic
 
 g = rdflib.Graph()
 g.parse("kg-mini-project-train.ttl", format="turtle")
-print(len(g))
+#print(len(g))
 
 kb = KnowledgeBase(path='carcinogenesis.owl')
 
@@ -43,7 +43,3 @@ while i <= 25:
     print(predictions)
 
     i = i + 1
-
-
-##die negativen sind nur teilweise da, muss die restlichen aus carsinogenesis holen, alle außer die die in den positiven sind
-##
