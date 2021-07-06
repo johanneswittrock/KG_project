@@ -7,7 +7,7 @@ Prerequisite: Download Anaconda under https://www.anaconda.com/products/individu
 
 To run the program the following steps (only tested on Windows) need to be done:
 
-1. Clone the repository: git clone https://github.com/dice-group/Ontolearn.git
+1. Clone the Ontolearn repository: git clone https://github.com/dice-group/Ontolearn.git
 2. Start Anaconda Navigator
 3. Launch CMD.exe Prompt
 4. conda create -n temp python=3.7.1
