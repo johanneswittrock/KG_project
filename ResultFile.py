@@ -1,16 +1,8 @@
 import os
 
-prefix = """@prefix lpclass: <https://lpbenchgen.org/class/> .
-@prefix carcinogenesis: <http://dl-learner.org/carcinogenesis#> .
-@prefix owl:   <http://www.w3.org/2002/07/owl#> .
-@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xml:   <http://www.w3.org/XML/1998/namespace> .
-@prefix owl11: <http://www.w3.org/2006/12/owl11#> .
-@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+prefix = """@prefix carcinogenesis: <http://dl-learner.org/carcinogenesis#> .
 @prefix lpres: <https://lpbenchgen.org/resource/> .
-@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix lpprop: <https://lpbenchgen.org/property/> .
-@prefix owl11xml: <http://www.w3.org/2006/12/owl11-xml#> . \n"""
+@prefix lpprop: <https://lpbenchgen.org/property/> . \n"""
 
 initialized = False
 
