@@ -1,10 +1,7 @@
-from owlready2 import * 
 import rdflib
 
 # retrieves the missing individuals which are not contained in the examples
 def getMissingIndividuals(examples):
-    print("examples length: " + str(len(examples)))
-
     # parse the training dataset, because all individuals are contained in the training dataset
     g = rdflib.Graph()
     g.parse("kg-mini-project-train.ttl", format="turtle")
@@ -29,7 +26,6 @@ def getMissingIndividuals(examples):
 
     # the positive and negative examples of a learning problem from the training dataset contain all individuals
     allIndividuals = list(allPositiveExamples) + list(allNegativeExamples)
-    print("allindividuals length: " + str(len(allIndividuals)))
 
     missingIndividuals = []
 
@@ -39,7 +35,6 @@ def getMissingIndividuals(examples):
       if individual not in examples:
         # if not then the individual is an missing individual
         missingIndividuals.append(individual)
-    print("missingindividuals length: " + str(len(missingIndividuals)))
     return missingIndividuals
   
  

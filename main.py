@@ -9,7 +9,6 @@ import ResultFile as resultFile
 # parse the grading dataset
 g = rdflib.Graph()
 g.parse("kg-mini-project-grading.ttl", format="turtle")
-print(len(g))
 
 # set the knowledge base to the carcinogenesis data
 kb = KnowledgeBase(path='carcinogenesis.owl')
