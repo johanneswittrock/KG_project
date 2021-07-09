@@ -7,15 +7,15 @@ Prerequisite: Download Anaconda under https://www.anaconda.com/products/individu
 
 To run the program the following steps (only tested on Windows) need to be done:
 
-1. Clone the Ontolearn repository: git clone https://github.com/dice-group/Ontolearn.git
+1. Download/Clone the Ontolearn repository: git clone https://github.com/dice-group/Ontolearn.git
 2. Start Anaconda Navigator
 3. Launch CMD.exe Prompt
-4. conda create -n temp python=3.7.1
-5. conda activate temp
+4. type "conda create -n temp python=3.7.1"
+5. type "conda activate temp"
 6. Move to the Ontolearn directory within the cmd.exe
-7. pip install -e .
-8. python -c "import ontolearn"
-9. To check whether Ontolearn is installed correctly: python -m pytest tests
+7. type "pip install -e ."
+8. type "python -c "import ontolearn" "
+9. To check whether Ontolearn is installed correctly type: "python -m pytest tests"
 10. Move to the project directory within the cmd.exe
 11. pip install requests
 12. Run the program: python main.py
