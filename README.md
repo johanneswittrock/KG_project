@@ -35,4 +35,4 @@ To run the program the following steps (only tested on Windows) need to be done:
 10. type "pip install requests"
 11. Run the program: python main.py
 
-Running the program may take a while. The result file can be found under "classification_result.ttl"
+Running the program may take a while. The classification results can be found under "classification_result.ttl"
