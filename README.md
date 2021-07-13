@@ -28,10 +28,10 @@ To run the program the following steps (only tested on Windows) need to be done:
 3. Launch CMD.exe Prompt
 4. type "conda create -n temp python=3.7.1"
 5. type "conda activate temp"
-6. Move to the Ontolearn directory within the cmd.exe
+6. Move to your Ontolearn directory within the cmd.exe
 7. type "pip install -e ."
-8. type "python -c "import ontolearn"
-9. Move to the project directory within the cmd.exe
+8. type "python -c "import ontolearn""
+9. Move to your directory of this project within the cmd.exe
 10. type "pip install requests"
 11. Run the program: python main.py
 
