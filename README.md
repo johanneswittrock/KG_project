@@ -9,7 +9,7 @@ This results in uncontrolled cell division and tumor formation.
 There have been several approaches to predict carcinogenicity. Classifying chemicals is a massive challenge, due to the high number 
 and diversity of elements, structures, and tests involved in the problem.
 
-Our Approach to predict carcinogenicity is based on the Ontolearn library (https://github.com/dice-group/Ontolearn), an open-source 
+Our approach to predict carcinogenicity is based on the Ontolearn library (https://github.com/dice-group/Ontolearn), an open-source 
 software library for explainable structured machine learning in Python. The library includes modules for processing knowledge bases, 
 representation learning, inductive logic programming and ontology engineering.
 Using RDFLib and SPARQL we retrieve the positive and negative examples for each learning problem from the dataset (kg-mini-project-grading.ttl). 
