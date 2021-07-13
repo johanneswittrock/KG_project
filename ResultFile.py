@@ -1,5 +1,6 @@
 import os
 
+# the prefixex as string for the result file
 prefix = """@prefix carcinogenesis: <http://dl-learner.org/carcinogenesis#> .
 @prefix lpres: <https://lpbenchgen.org/resource/> .
 @prefix lpprop: <https://lpbenchgen.org/property/> . \n"""
@@ -10,11 +11,18 @@ initialized = False
 def initializeResultFile():
     global initialized
     global prefix
+
+    # check if the file already exists
     if os.path.exists("classification_result.ttl"):
+        # if yes then delete it
         os.remove("classification_result.ttl")
+    
+    # create the result file
     f = open("classification_result.ttl", "w")
+    # write the prefixes to the file
     f.write(prefix)
     f.close()
+    # the file is now initialized
     initialized = True
 
 # writes the positive and the negative individuals of a learning problem to the result file
@@ -31,7 +39,11 @@ def createResultFile(lp, resultNumber, positiveResults, negativeResults):
     presults3 = "lpprop:resource  "
     for positiveResult in positiveResults:
         strresult = str(positiveResult)
+        # a individual is at this point a string which begins with "carcinogenesis."
+        # but we want "carcinogenesis:"
+        # therefore cut of the first 15 chars
         rhs = strresult[15:]
+        # replace the first 15 chars with "carcinogenesis:"
         presult = "carcinogenesis:" + rhs
         presults3 = presults3 + presult + " , "
     presults3 = presults3[:-2] + "."
@@ -44,7 +56,11 @@ def createResultFile(lp, resultNumber, positiveResults, negativeResults):
     nresults3 = "lpprop:resource  "
     for negativeResult in negativeResults:
         strresult = str(negativeResult)
+        # a individual is at this point a string which begins with "carcinogenesis."
+        # but we want "carcinogenesis:"
+        # therefore cut of the first 15 chars
         rhs = strresult[15:]
+        # replace the first 15 chars with "carcinogenesis:"
         nresult = "carcinogenesis:" + rhs
         nresults3 = nresults3 + nresult + " , "
     nresults3 = nresults3[:-2] + "."

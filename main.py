@@ -1,36 +1,39 @@
 import rdflib
-
 from ontolearn import KnowledgeBase
 from ontolearn.concept_learner import CustomConceptLearner
 from ontolearn.heuristics import DLFOILHeuristic
 import IndividualsParser as individualsParser
 import ResultFile as resultFile
 
-# parse the grading dataset
+# parse the grading dataset with rdflib
 g = rdflib.Graph()
 g.parse("kg-mini-project-grading.ttl", format="turtle")
 
 # set the knowledge base to the carcinogenesis data
 kb = KnowledgeBase(path='carcinogenesis.owl')
 
-# iterate over all learning problems
+# iterate over all 25 learning problems
 i = 26
 resultNumber = 1
 while i <= 50:
 
-    # SPARQL query to get the positive examples of the learning problem
+    # SPARQL query to get the positive examples of the learning problem i
     qres = g.query(
         "SELECT ?ex WHERE {<https://lpbenchgen.org/resource/lp_" + str(i) + "> <https://lpbenchgen.org/property/includesResource> ?ex .}"
     )
+
+    # save the positive examples as strings in a set
     positiveExamples = set()
     for row in qres:
         ex = str(row.ex)
         positiveExamples.add(ex)
 
-    # SPARQL query to get the negative examples of the learning problem
+    # SPARQL query to get the negative examples of the learning problem i
     qres = g.query(
         "SELECT ?ex WHERE {<https://lpbenchgen.org/resource/lp_" + str(i) + "> <https://lpbenchgen.org/property/excludesResource> ?ex .}"
     )
+
+    # save the negative examples as strings in a set
     negativeExamples = set()
     for row in qres:
         ex = str(row.ex)
@@ -56,7 +59,7 @@ while i <= 50:
     positiveResults = list(predictions.loc[predictions["predictions"] == 1.0].index)
     negativeResults = list(predictions.loc[predictions["predictions"] == 0].index)
 
-    # write the classification results to a result file
+    # write the classification results to the result file (classification_result.ttl)
     resultFile.createResultFile(i, resultNumber, positiveResults, negativeResults)
     
     print("Learning Problem: " + str(i))
